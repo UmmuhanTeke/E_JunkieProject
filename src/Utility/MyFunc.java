@@ -7,7 +7,7 @@ public class MyFunc {
 
     public static void Wait(int second) {
         try {
-            Thread.sleep(second * 1000l);
+            Thread.sleep(second * 1000L);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

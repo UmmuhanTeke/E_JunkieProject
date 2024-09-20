@@ -15,7 +15,6 @@ public class BaseDriver {
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-
     }
 
     public static void tearDown() {

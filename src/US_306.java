@@ -19,14 +19,14 @@ public class US_306 extends BaseDriver {
         driver.get("https://shopdemo.fatfreeshop.com/");
         wait.until(ExpectedConditions.urlToBe("https://shopdemo.fatfreeshop.com/"));
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[class='contact']")));
         WebElement contactUsBtn=driver.findElement(By.cssSelector("[class='contact']"));
         MyFunc.scrollElement(contactUsBtn);
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[class='contact']")));
         actions.click(contactUsBtn).build().perform();
 
         wait.until(ExpectedConditions.urlToBe("https://shopdemo.fatfreeshop.com/contact"));
         WebElement contactUsControl=driver.findElement(By.cssSelector("[class='has-text-centered']"));
-        Assert.assertTrue("Contact us sayfası açılamadı",contactUsControl.getText().contains("You can use the form"));
+        Assert.assertTrue("Contact us page failed to open",contactUsControl.getText().contains("You can use the form"));
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[name='sender_name']")));
         WebElement name=driver.findElement(By.cssSelector("[name='sender_name']"));
@@ -50,7 +50,7 @@ public class US_306 extends BaseDriver {
 
         wait.until(ExpectedConditions.alertIsPresent());
         String alertMessage=driver.switchTo().alert().getText();
-        Assert.assertTrue("Alert çıkmadı",alertMessage.contains("didn't match"));
+        Assert.assertTrue("no alert did not appear",alertMessage.contains("didn't match"));
         driver.switchTo().alert().accept();
 
         tearDown();

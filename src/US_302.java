@@ -8,7 +8,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
 
 public class US_302 extends BaseDriver {
 
@@ -31,24 +30,27 @@ public class US_302 extends BaseDriver {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[text()='Demo eBook'])[1]")));
         WebElement demoEbookControl = driver.findElement(By.xpath("(//*[text()='Demo eBook'])[1]"));
-        Assert.assertTrue("Demo eBook sepete eklenememiştir", demoEbookControl.getText().contains("eBook"));
+        Assert.assertTrue("‘Demo eBook’ could not be added to the basket.", demoEbookControl.getText().contains("eBook"));
 
+        WebElement iframe = driver.findElement(By.xpath("//iframe[@class='EJIframeV3 EJOverlayV3']"));
+        driver.switchTo().frame(iframe);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Visa, AMEX, MasterCard, Maestro, Discover']")));
 
-        // WebElement bankCard=driver.findElement(By.cssSelector("[class='Payment-Button CC'][data-option='CC']"));
-        //        wait.until(ExpectedConditions.elementToBeClickable(bankCard));
-        //        MyFunc.jsClick(bankCard);
+        WebElement bankCard = driver.findElement(By.xpath("//*[text()='Visa, AMEX, MasterCard, Maestro, Discover']"));
+        wait.until(ExpectedConditions.elementToBeClickable(bankCard));
+        MyFunc.jsClick(bankCard);
 
-        MyFunc.Wait(2);
-        for (int i = 1; i <= 20; i++) {
-            robot.keyPress(KeyEvent.VK_TAB);
-            robot.keyRelease(KeyEvent.VK_TAB);
-        }
-
-        MyFunc.Wait(2);
-        robot.keyPress(KeyEvent.VK_ENTER);
-        robot.keyRelease(KeyEvent.VK_ENTER);
-        MyFunc.Wait(2);
-
-        tearDown();
+        // MyFunc.Wait(2);
+        //        for (int i = 1; i <= 20; i++) {
+        //            robot.keyPress(KeyEvent.VK_TAB);
+        //            robot.keyRelease(KeyEvent.VK_TAB);
+        //        }
+        //
+        //        MyFunc.Wait(2);
+        //        robot.keyPress(KeyEvent.VK_ENTER);
+        //        robot.keyRelease(KeyEvent.VK_ENTER);
+        //        MyFunc.Wait(2);
+        //
+        //        tearDown();
     }
 }

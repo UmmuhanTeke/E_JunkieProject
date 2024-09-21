@@ -1,6 +1,5 @@
 import Utility.BaseDriver;
 import Utility.MyFunc;
-import com.google.j2objc.annotations.Weak;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;

@@ -56,7 +56,6 @@ public class US_302 extends BaseDriver {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='Billing-Form Form']//p")));
         WebElement billingDetails = driver.findElement(By.xpath("//div[@class='Billing-Form Form']//p"));
-        wait.until(ExpectedConditions.visibilityOf(billingDetails));
         Assert.assertTrue("‘Billing information’ has been filled in.", billingDetails.isDisplayed());
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@type='button' and @class='Pay-Button']")));

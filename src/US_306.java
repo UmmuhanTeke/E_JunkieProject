@@ -44,8 +44,9 @@ public class US_306 extends BaseDriver {
         WebElement message=driver.findElement(By.cssSelector("[id='sender_message']"));
         actions.click(message).sendKeys(messageStr).build().perform();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[type='submit']")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[type='submit']")));
         WebElement sendMessageBtn=driver.findElement(By.cssSelector("button[type='submit']"));
+        wait.until(ExpectedConditions.elementToBeClickable(sendMessageBtn));
         actions.click(sendMessageBtn).build().perform();
 
         wait.until(ExpectedConditions.alertIsPresent());

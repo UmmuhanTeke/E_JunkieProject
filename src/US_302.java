@@ -18,19 +18,15 @@ import java.time.format.DateTimeFormatter;
 
 public class US_302 extends BaseDriver {
 
-    public static Actions actions = new Actions(driver);
-
     @Test
     public void invalidEmailAndInvalidInvoiceName() throws AWTException, IOException {
-        Robot robot = new Robot();
-
         driver.get("https://shopdemo.fatfreeshop.com/");
         wait.until(ExpectedConditions.urlToBe("https://shopdemo.fatfreeshop.com/"));
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='column all_tag']//*[text()='Ebook'] ")));
         WebElement ebookButton = driver.findElement(By.xpath("//div[@class='column all_tag']//*[text()='Ebook'] "));
         wait.until(ExpectedConditions.elementToBeClickable(ebookButton));
-        actions.moveToElement(ebookButton).click().build().perform();
+        MyFunc.jsClick(ebookButton);
 
         wait.until(ExpectedConditions.urlToBe("https://shopdemo.fatfreeshop.com/tags/Ebook"));
         Assert.assertTrue("Failed to proceed to the Ebook page", driver.getCurrentUrl().contains("/Ebook"));
@@ -39,7 +35,7 @@ public class US_302 extends BaseDriver {
         WebElement addToCartButton = driver.findElement(By.cssSelector("[class='view_product']"));
         MyFunc.scrollElement(addToCartButton);
         wait.until(ExpectedConditions.elementToBeClickable(addToCartButton));
-        actions.moveToElement(addToCartButton).click().build().perform();
+        MyFunc.jsClick(addToCartButton);
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//iframe[@class='EJIframeV3 EJOverlayV3']")));
         WebElement iframe = driver.findElement(By.xpath("//iframe[@class='EJIframeV3 EJOverlayV3']"));

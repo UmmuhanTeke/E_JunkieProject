@@ -19,7 +19,7 @@ public class US_304 extends BaseDriver {
     String expiration = "1224";
     String CVV = "000";
     String company = "Team6";
-    String telNumber = "98757905";
+    String phoneNumber = "98757905";
 
     @Test
     public void paymentAndConfirmByCreditCard() throws AWTException {
@@ -91,7 +91,7 @@ public class US_304 extends BaseDriver {
                 robot.keyPress(KeyEvent.VK_TAB);
                 robot.keyRelease(KeyEvent.VK_TAB);
             }
-            action.sendKeys(telNumber).perform();
+            action.sendKeys(phoneNumber).perform();
 
             for (int i = 0; i < 1; i++) {
                 robot.keyPress(KeyEvent.VK_TAB);
@@ -104,16 +104,20 @@ public class US_304 extends BaseDriver {
             robot.keyPress(KeyEvent.VK_TAB);
             robot.keyRelease(KeyEvent.VK_TAB);
         }
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[class='Checkout-Option ']")));
         action.sendKeys(creditCardNumber).perform();
         action.sendKeys(expiration).perform();
         action.sendKeys(CVV).perform();
 
-        for (int i = 0; i < 1; i++) {
-            robot.keyPress(KeyEvent.VK_TAB);
-            robot.keyRelease(KeyEvent.VK_TAB);
-        }
-        robot.keyPress(KeyEvent.VK_ENTER);
-        robot.keyRelease(KeyEvent.VK_ENTER);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@type='button' and @class='Pay-Button']")));
+        WebElement payButton = driver.findElement(By.xpath("//button[@type='button' and @class='Pay-Button']"));
+        wait.until(ExpectedConditions.elementToBeClickable(payButton));
+        MyFunc.jsClick(payButton);
 
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[@class='confirme_text']")));
+        WebElement confirmText=driver.findElement(By.xpath("//p[@class='confirme_text']"));
+        Assert.assertTrue("The Confirm text is not matched",confirmText.getText().contains("confirmed"));
+
+        tearDown();
     }
 }

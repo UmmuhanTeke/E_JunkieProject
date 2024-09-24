@@ -1,4 +1,5 @@
 import Utility.BaseDriver;
+import Utility.MyFunc;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -6,15 +7,24 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 
 public class US_304 extends BaseDriver {
 
     public static Actions action = new Actions(driver);
-    public static Robot robot;
-    String productName="Demo eBook";
+    String productName = "Demo eBook";
+    String eMail = "kayamerve@gmail.com";
+    String nameOnCard = "Merve Kaya";
+    String creditCardNumber = "4242 4242 4242 4242";
+    String expiration = "1224";
+    String CVV = "000";
+    String company = "Team6";
+    String telNumber = "98757905";
 
     @Test
     public void paymentAndConfirmByCreditCard() throws AWTException {
+
+        Robot robot = new Robot();
         driver.get("https://shopdemo.fatfreeshop.com/");
         wait.until(ExpectedConditions.urlToBe("https://shopdemo.fatfreeshop.com/"));
 
@@ -23,36 +33,87 @@ public class US_304 extends BaseDriver {
         wait.until(ExpectedConditions.elementToBeClickable(eBook));
         action.click(eBook).build().perform();
 
-        wait.until(ExpectedConditions.textToBe(By.className("title"),"Demo eBook"));
+        wait.until(ExpectedConditions.textToBe(By.className("title"), "Demo eBook"));
         WebElement eBookButton = driver.findElement(By.xpath("//*[@class='view_product' ]"));
         wait.until(ExpectedConditions.elementToBeClickable(eBookButton));
         action.click(eBookButton).build().perform();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//iframe[@class='EJIframeV3 EJOverlayV3' ])")));
-        WebElement yourCartIframe=driver.findElement(By.xpath("(//iframe[@class='EJIframeV3 EJOverlayV3' ])"));
-        wait.until(ExpectedConditions.visibilityOf(yourCartIframe));
+        WebElement yourCartIframe = driver.findElement(By.xpath("(//iframe[@class='EJIframeV3 EJOverlayV3' ])"));
         driver.switchTo().frame(yourCartIframe);
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//h3[@class='Title'])[1]")));
-        WebElement yourCarttext=driver.findElement(By.xpath("(//h3[@class='Title'])[1]"));
-        wait.until(ExpectedConditions.visibilityOf(yourCarttext));
-        Assert.assertTrue("Your Cart is not available",yourCarttext.getText().contains("Your Cart"));
+        WebElement yourCartText = driver.findElement(By.xpath("(//h3[@class='Title'])[1]"));
+        Assert.assertTrue("Your Cart is not available", yourCartText.getText().contains("Your Cart"));
 
-        if (yourCarttext.isDisplayed()){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h5[text()='Demo eBook' ]")));
-        WebElement productNameText=driver.findElement(By.xpath("//h5[text()='Demo eBook' ]"));
-        wait.until(ExpectedConditions.visibilityOf(productNameText));
-        Assert.assertTrue("Product name is not same",productNameText.getText().contains(productName));
+        if (yourCartText.isDisplayed()) {
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h5[text()='Demo eBook' ]")));
+            WebElement productNameText = driver.findElement(By.xpath("//h5[text()='Demo eBook' ]"));
+            Assert.assertTrue("Product name is not same", productNameText.getText().contains(productName));
 
-        wait.until(ExpectedConditions.textToBe(By.xpath("//span[text()='0.50 USD' ]"),"0.50 USD"));
-        WebElement totalPrice=driver.findElement(By.xpath("//span[text()='0.50 USD' ]"));
+            wait.until(ExpectedConditions.textToBe(By.xpath("//span[text()='0.50 USD' ]"), "0.50 USD"));
+            WebElement totalPrice = driver.findElement(By.xpath("//span[text()='0.50 USD' ]"));
 
-        String stringTotal=totalPrice.getText().replaceAll("[^0-9,.]","");
-        double doubleTotal=Double.parseDouble(stringTotal);
-        System.out.println("yeni fiyat : "+doubleTotal);
-        Assert.assertTrue("Total price is not same",doubleTotal==0.5);
-
+            String stringTotal = totalPrice.getText().replaceAll("[^0-9,.]", "");
+            double doubleTotal = Double.parseDouble(stringTotal);
+            Assert.assertTrue("Total price is not same", doubleTotal == 0.5);
         }
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[class='Payment-Button CC']")));
+        WebElement creditCardButton = driver.findElement(By.cssSelector("button[class='Payment-Button CC']"));
+        wait.until(ExpectedConditions.elementToBeClickable(creditCardButton));
+        action.click(creditCardButton).build().perform();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='Billing-Form Form']")));
+        WebElement billingDetailsForm = driver.findElement(By.xpath("//div[@class='Billing-Form Form']"));
+
+        if (billingDetailsForm.isDisplayed()) {
+            MyFunc.Wait(2);
+            for (int i = 0; i <= 2; i++) {
+                robot.keyPress(KeyEvent.VK_TAB);
+                robot.keyRelease(KeyEvent.VK_TAB);
+            }
+            action.sendKeys(eMail).perform();
+
+            for (int i = 0; i < 1; i++) {
+                robot.keyPress(KeyEvent.VK_TAB);
+                robot.keyRelease(KeyEvent.VK_TAB);
+            }
+            action.sendKeys(eMail).perform();
+
+            for (int i = 0; i < 1; i++) {
+                robot.keyPress(KeyEvent.VK_TAB);
+                robot.keyRelease(KeyEvent.VK_TAB);
+            }
+            action.sendKeys(nameOnCard).perform();
+
+            for (int i = 0; i < 1; i++) {
+                robot.keyPress(KeyEvent.VK_TAB);
+                robot.keyRelease(KeyEvent.VK_TAB);
+            }
+            action.sendKeys(telNumber).perform();
+
+            for (int i = 0; i < 1; i++) {
+                robot.keyPress(KeyEvent.VK_TAB);
+                robot.keyRelease(KeyEvent.VK_TAB);
+            }
+            action.sendKeys(company).perform();
+        }
+
+        for (int i = 0; i <2; i++) {
+            robot.keyPress(KeyEvent.VK_TAB);
+            robot.keyRelease(KeyEvent.VK_TAB);
+        }
+        action.sendKeys(creditCardNumber).perform();
+        action.sendKeys(expiration).perform();
+        action.sendKeys(CVV).perform();
+
+        for (int i = 0; i < 1; i++) {
+            robot.keyPress(KeyEvent.VK_TAB);
+            robot.keyRelease(KeyEvent.VK_TAB);
+        }
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
 
     }
 }

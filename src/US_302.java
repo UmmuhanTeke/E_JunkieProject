@@ -9,7 +9,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;

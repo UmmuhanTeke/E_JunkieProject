@@ -6,11 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.time.Duration;
 
 public class US_303 extends BaseDriver {
 
@@ -61,7 +59,7 @@ public class US_303 extends BaseDriver {
         wait.until(ExpectedConditions.elementToBeClickable(billingDetails));
         Assert.assertTrue("‘Billing information’ has been filled in.", billingDetails.isDisplayed());
 
-        MyFunc.Wait(2);
+        MyFunc.Wait(3);
         for (int i = 0; i <= 2; i++) {
             robot.keyPress(KeyEvent.VK_TAB);
             robot.keyRelease(KeyEvent.VK_TAB);

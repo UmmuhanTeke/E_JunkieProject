@@ -1,6 +1,7 @@
 import Utility.BaseDriver;
 import org.junit.Assert;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.awt.*;
@@ -22,6 +23,8 @@ public class US_307 extends BaseDriver {
 
         wait.until(ExpectedConditions.urlToBe("https://shopdemo.fatfreeshop.com/"));
         Assert.assertTrue("Failed to reach home page",driver.getTitle().equals("Example E-junkie Shop Shop"));
+        Assert.assertTrue("Failed to reach home page",driver.getCurrentUrl().equals("https://shopdemo.fatfreeshop.com/"));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//a[text()='T-shirts'])[1]")));
 
         tearDown();
     }

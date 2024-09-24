@@ -9,7 +9,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import java.awt.*;
+
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -18,7 +18,7 @@ import java.time.format.DateTimeFormatter;
 public class US_302 extends BaseDriver {
 
     @Test
-    public void invalidEmailAndInvalidInvoiceName() throws AWTException, IOException {
+    public void invalidEmailAndInvalidInvoiceName() throws IOException {
         driver.get("https://shopdemo.fatfreeshop.com/");
         wait.until(ExpectedConditions.urlToBe("https://shopdemo.fatfreeshop.com/"));
 
@@ -60,8 +60,8 @@ public class US_302 extends BaseDriver {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='SnackBar']//span")));
         WebElement invalidMessage = driver.findElement(By.xpath("//div[@id='SnackBar']//span"));
-        LocalDateTime localDateTime=LocalDateTime.now();
-        DateTimeFormatter imgFormat=DateTimeFormatter.ofPattern("dd.MM.yyyy.HH.mm.ss");
+        LocalDateTime localDateTime = LocalDateTime.now();
+        DateTimeFormatter imgFormat = DateTimeFormatter.ofPattern("dd.MM.yyyy.HH.mm.ss");
 
         if (invalidMessage.isDisplayed()) {
             System.out.println(invalidMessage.getText());
@@ -69,7 +69,7 @@ public class US_302 extends BaseDriver {
 
             TakesScreenshot ts = (TakesScreenshot) driver;
             File hafizadakiFile = ts.getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(hafizadakiFile, new File("errorMessageImg\\"+localDateTime.format(imgFormat)+"screenShot.jpg"));
+            FileUtils.copyFile(hafizadakiFile, new File("errorMessageImg\\" + localDateTime.format(imgFormat) + "screenShot.jpg"));
         }
         tearDown();
     }

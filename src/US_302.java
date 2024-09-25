@@ -63,13 +63,13 @@ public class US_302 extends BaseDriver {
         DateTimeFormatter imgFormat = DateTimeFormatter.ofPattern("dd.MM.yyyy.HH.mm.ss");
 
         if (invalidMessage.isDisplayed()) {
-            System.out.println(invalidMessage.getText());
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='SnackBar']//span")));
 
             TakesScreenshot ts = (TakesScreenshot) driver;
             File hafizadakiFile = ts.getScreenshotAs(OutputType.FILE);
             FileUtils.copyFile(hafizadakiFile, new File("errorMessageImg\\" + localDateTime.format(imgFormat) + "screenShot.jpg"));
         }
+
         tearDown();
     }
 }

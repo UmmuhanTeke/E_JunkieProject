@@ -51,7 +51,6 @@ public class US_301 extends BaseDriver {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='SnackBar']//span")));
         WebElement invalidCodeMessage = driver.findElement(By.xpath("//div[@id='SnackBar']//span"));
-        System.out.println(invalidCodeMessage.getText());
         Assert.assertTrue("Valid promo code", invalidCodeMessage.getText().contains("Invalid"));
 
         tearDown();

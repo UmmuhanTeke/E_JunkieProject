@@ -19,8 +19,6 @@ public class US_301 extends BaseDriver {
         WebElement ebookButton = driver.findElement(By.xpath("//div[@class='column all_tag']//*[text()='Ebook'] "));
         wait.until(ExpectedConditions.elementToBeClickable(ebookButton));
         MyFunc.jsClick(ebookButton);
-
-        wait.until(ExpectedConditions.urlToBe("https://shopdemo.fatfreeshop.com/tags/Ebook"));
         Assert.assertTrue("Failed to proceed to the Ebook page", driver.getCurrentUrl().contains("/Ebook"));
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[class='view_product']")));

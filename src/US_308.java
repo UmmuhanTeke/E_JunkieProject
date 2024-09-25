@@ -20,7 +20,7 @@ public class US_308 extends BaseDriver {
         wait.until(ExpectedConditions.urlToBe("https://shopdemo.fatfreeshop.com/?"));
 
         Robot robot = new Robot();
-        for (int i = 0; i <= 24; i++) {// 25tab
+        for (int i = 0; i <= 24; i++) {
             robot.keyPress(KeyEvent.VK_TAB);
             robot.keyRelease(KeyEvent.VK_TAB);
             MyFunc.Wait(1);

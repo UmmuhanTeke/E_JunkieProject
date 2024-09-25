@@ -1,42 +1,61 @@
 import Utility.BaseDriver;
 import Utility.MyFunc;
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class US_301 extends BaseDriver {
+
     @Test
-    public void US_301Test(){
-        driver.get("https://shopdemo.fatfreeshop.com/?");
+    public void invalidPromoCode() {
+        String promoCode = "345231234";
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='box'])[2]")));
-        WebElement eBook=driver.findElement(By.xpath("(//div[@class='box'])[2]"));
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[@class='box'])[2]")));
-        eBook.click();
+        driver.get("https://shopdemo.fatfreeshop.com/");
+        wait.until(ExpectedConditions.urlToBe("https://shopdemo.fatfreeshop.com/"));
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='ADD TO CART']")));
-        WebElement button=driver.findElement(By.xpath("//button[text()='ADD TO CART']"));
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='ADD TO CART']")));
-        button.click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='column all_tag']//*[text()='Ebook'] ")));
+        WebElement ebookButton = driver.findElement(By.xpath("//div[@class='column all_tag']//*[text()='Ebook'] "));
+        wait.until(ExpectedConditions.elementToBeClickable(ebookButton));
+        MyFunc.jsClick(ebookButton);
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Add Promo Code']")));
-        WebElement addPromecode=driver.findElement(By.xpath("//button[text()='Add Promo Code']"));
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Add Promo Code']")));
-        addPromecode.click();
+        wait.until(ExpectedConditions.urlToBe("https://shopdemo.fatfreeshop.com/tags/Ebook"));
+        Assert.assertTrue("Failed to proceed to the Ebook page", driver.getCurrentUrl().contains("/Ebook"));
 
-        MyFunc.Wait(5);
-        WebElement promeCode=driver.findElement(By.xpath("(//input[@type='text'])[2]"));
-        promeCode.sendKeys("12345678");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[class='view_product']")));
+        WebElement addToCartButton = driver.findElement(By.cssSelector("[class='view_product']"));
+        MyFunc.scrollElement(addToCartButton);
+        wait.until(ExpectedConditions.elementToBeClickable(addToCartButton));
+        MyFunc.jsClick(addToCartButton);
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='Promo-Apply']")));
-        WebElement apply=driver.findElement(By.xpath("//button[@class='Promo-Apply']"));
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='Promo-Apply']")));
-        apply.click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//iframe[@class='EJIframeV3 EJOverlayV3']")));
+        WebElement iframe = driver.findElement(By.xpath("//iframe[@class='EJIframeV3 EJOverlayV3']"));
+        driver.switchTo().frame(iframe);
 
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[text()='Demo eBook'])[1]")));
+        WebElement demoEbookControl = driver.findElement(By.xpath("(//*[text()='Demo eBook'])[1]"));
+        Assert.assertTrue("‘Demo eBook’ could not be added to the basket.", demoEbookControl.getText().contains("eBook"));
 
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='Actions']//button)[2]")));
+        WebElement addPromoCode = driver.findElement(By.xpath("(//div[@class='Actions']//button)[2]"));
+        wait.until(ExpectedConditions.elementToBeClickable(addPromoCode));
+        MyFunc.jsClick(addPromoCode);
 
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@class='Promo-Code-Value']")));
+        WebElement promoCodeBox = driver.findElement(By.xpath("//input[@class='Promo-Code-Value']"));
+        promoCodeBox.sendKeys(promoCode);
 
-        driver.quit();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='Promo-Box Active']//button")));
+        WebElement applyButton = driver.findElement(By.xpath("//div[@class='Promo-Box Active']//button"));
+        wait.until(ExpectedConditions.elementToBeClickable(applyButton));
+        MyFunc.jsClick(applyButton);
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='SnackBar']//span")));
+        WebElement invalidCodeMessage = driver.findElement(By.xpath("//div[@id='SnackBar']//span"));
+        System.out.println(invalidCodeMessage.getText());
+        Assert.assertTrue("Vali promo code", invalidCodeMessage.getText().contains("Invalid"));
+
+        tearDown();
     }
 }

@@ -25,7 +25,6 @@ public class US_305 extends BaseDriver {
 
     @Test
     public void paymentAndConfirmByCreditCard() throws AWTException {
-
         Robot robot = new Robot();
         driver.get("https://shopdemo.fatfreeshop.com/");
         wait.until(ExpectedConditions.urlToBe("https://shopdemo.fatfreeshop.com/"));

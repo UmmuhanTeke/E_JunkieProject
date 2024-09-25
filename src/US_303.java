@@ -103,7 +103,7 @@ public class US_303 extends BaseDriver {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='SnackBar']//span")));
         WebElement cardNumberInvalid = driver.findElement(By.xpath("//div[@id='SnackBar']//span"));
-        System.out.println(cardNumberInvalid.getText());
+        Assert.assertTrue("Card number valid", cardNumberInvalid.getText().contains("invalid"));
 
         tearDown();
     }

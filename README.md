@@ -34,7 +34,6 @@ In this scenario, the user reaches the payment page, inputs their email and othe
 
 In this scenario, the user successfully completes the payment by entering all their details. A confirmation message will be displayed on the screen.
 
-
 ### 5- **Invoice Download Process - (US_305)**
 
 In this scenario, the user is required to download and view their invoice after completing a successful payment transaction.

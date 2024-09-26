@@ -68,19 +68,17 @@ The basic technologies and tools to be used in this project include:
 
 ## Prerequisites
 
-- Java Development Kit (JDK): Installed on your system for writing and compiling Java code.
+- **Java Development Kit (JDK):** Installed on your system for writing and compiling Java code.
 
-- IDE (Integrated Development Environment): Choose IntelliJ IDEA for Java development.
+- **IDE (Integrated Development Environment):** Choose IntelliJ IDEA for Java development.
 
-- Maven: Installed for dependency management and project build tasks.
+- **Maven:** Installed for dependency management and project build tasks.
 
-- Git: Installed for version control, it is essential for managing your project's source code on GitHub.
+- **Git:** Installed for version control, it is essential for managing your project's source code on GitHub.
 
-- Selenium WebDriver: Become familiar with its usage and basic automation techniques.
+- **Selenium WebDriver:** Become familiar with its usage and basic automation techniques.
 
-- JIRA & ZEPHYR Test Management Tool: If using the system, ensure access to and understanding of test case creation, management, and defect reporting.
-
-- Logging with slf4j: Learn to configure and use for logging in your Java project.
+- **JIRA & ZEPHYR Test Management Tool:** If using the system, ensure access to and understanding of test case creation, management, and defect reporting.
 
 
 ## Contributors

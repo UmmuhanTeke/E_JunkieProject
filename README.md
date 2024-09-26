@@ -4,20 +4,27 @@
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Features Tested](#features-tested)
+- [Test Environment](#test-environment)
 - [Technologies and Tools Used](#technologies-and-tools-used)
 - [Prerequisites](#prerequisites)
 - [Contributors](#contributors)
 
 ## Project Overview
+
+E-junkie Shop project, the system allows users to shop by adding products to their cart and offers convenient options for secure payment using email and accurate card information. 
+
 ## Features Tested
+## Test Environment
 ## Technologies and Tools Used
 ## Prerequisites
 ## Contributors
+
+ 
  
 | Contributor                                               | Role                                  |
 |-----------------------------------------------------------|---------------------------------------|
 | [Ümmühan Teke](https://github.com/UmmuhanTeke)            | Project Lead & QA Automation Engineer |
 | [Merve Kaya](https://github.com/kayyamervee)              | QA Automation Engineer                |
-| [Sefa Kahraman](https://github.com/SefaKahramann)         | QA Automation Engineer                |
 | [Abdulkerim Mutlu](https://github.com/AbdulkerimMutlu)    | QA Automation Engineer                |
+| [Sefa Kahraman](https://github.com/SefaKahramann)         | QA Automation Engineer                |
 | [Songül Çam](https://github.com/songulcam)                | QA Automation Engineer                |

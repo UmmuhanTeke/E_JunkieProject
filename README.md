@@ -4,14 +4,14 @@
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Features Tested](#features-tested)
-- [Test Environment](#test-environment)
+- [Team6 Practice Project](#team6-practice-project)
 - [Technologies and Tools Used](#technologies-and-tools-used)
 - [Prerequisites](#prerequisites)
 - [Contributors](#contributors)
 
 ## Project Overview
 
-E-junkie Shop project, the system allows users to shop by adding products to their cart and offers convenient options for secure payment using email and accurate card information. 
+#### E-junkie Shop project, the system allows users to shop by adding products to their cart and offers convenient options for secure payment using email and accurate card information. 
 
 ## Features Tested
 ### The following user stories are tested in this project:
@@ -51,9 +51,9 @@ In this scenario, the user clicks on the ‘How It Works’ button on the main p
 
 ## Team6 Practice Project
 
--Domain:  [shopdemo.ejunkie.com](https://shopdemo.fatfreeshop.com/).
+- #### Domain:  [shopdemo.ejunkie.com](https://shopdemo.fatfreeshop.com/).
 
--Supported browsers: [Chrome](), [Safari](), [Firefox]()
+- #### Supported browsers: [Chrome](), [Safari](), [Firefox]()
 
 ## Technologies and Tools Used
 
@@ -62,7 +62,6 @@ The basic technologies and tools to be used in this project include:
 - **Java** - Programming language
 - **Selenium** - Web browser automation
 - **Apache POI** - Library for reading and writing Excel files
-- **Maven** - Dependency management and Build 
 - **Git & GitHub** - Version control Systems 
 - **JIRA & Zephyr-Squad** - Test management Tools
 
@@ -71,8 +70,6 @@ The basic technologies and tools to be used in this project include:
 - **Java Development Kit (JDK):** Installed on your system for writing and compiling Java code.
 
 - **IDE (Integrated Development Environment):** Choose IntelliJ IDEA for Java development.
-
-- **Maven:** Installed for dependency management and project build tasks.
 
 - **Git:** Installed for version control, it is essential for managing your project's source code on GitHub.
 

@@ -1,4 +1,4 @@
-# Agile Software Testing Project - E-junkie Shop
+# Agile Software Testing Project -  Ejunkie Shop
 ### _This_ _project_ _is_ _for_ _educational_ _purposes_ _and_ _is_ _intended_ _to_ _help_ _participants_ _test_ _their_ _own_ _skills_.
 
 ## Table of Contents

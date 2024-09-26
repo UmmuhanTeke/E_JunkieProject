@@ -1,5 +1,5 @@
 # Agile Software Testing Project -  Ejunkie Shop
-### _This_ _project_ _is_ _for_ _educational_ _purposes_ _and_ _is_ _intended_ _to_ _help_ _participants_ _test_ _their_ _own_ _skills_. _The_ _E-Junkie_ _Shop_ _project_ _includes_ _an_ _automated_ _test_ _suite_ _for_ _a_ _web-based_ _platform_ _designed_ _for_ _an_ _online_ _shopping_ _site_.
+### _This_ _project_ _is_ _for_ _educational_ _purposes_ _and_ _is_ _intended_ _to_ _help_ _participants_ _test_ _their_ _own_ _skills_. _The_ _E-Junkie_ _Shop_ _project_ _includes_ _an_ _automated_ _test_ _suite_ _for_ _a_ _web-based_ _platform_ _designed_ _for_ _an_ _online_ _shopping_ _site_. ###
 
 ## Table of Contents
 - [Project Overview](#project-overview)

@@ -49,7 +49,7 @@ In this scenario, the user accesses the e-junkie homepage from Shopdemo.e-Junkie
 
 ### 8- **Information Access Video - (US_308)**
 
-In this scenario, the user clicks on the ‘How It Works’ button on the main page of https://www.e-junkie.com/. The video opens in a YouTube window and can be watched successfully.
+In this scenario, the user clicks on the ‘How It Works’ button on the main page of [E-junkie Shop](https://www.e-junkie.com/). The video opens in a YouTube window and can be watched successfully.
 
 ## Team6 Practice Project
 

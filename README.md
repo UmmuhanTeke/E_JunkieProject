@@ -7,7 +7,9 @@
 - [Team6 Practice Project](#team6-practice-project)
 - [Technologies and Tools Used](#technologies-and-tools-used)
 - [Prerequisites](#prerequisites)
+- [Pull Request Rules](#pull-request-rules)
 - [Contributors](#contributors)
+- [License](#license)
 
 ## Project Overview
 
@@ -77,6 +79,30 @@ The basic technologies and tools to be used in this project include:
 
 - **JIRA & ZEPHYR Test Management Tool:** If using the system, ensure access to and understanding of test case creation, management, and defect reporting.
 
+ ## Pull Request Rules
+
+ When contributing to this project, please adhere to the following guidelines:
+
+1. **Create a Descriptive Pull Request Title**: Ensure that your pull request title clearly describes the changes you're making.
+
+2. **Provide Detailed Descriptions**: In your pull request description, provide a clear and detailed explanation of the changes you've made and why they are necessary.
+
+3. **One Pull Request per Feature**: If you're adding multiple features or making several changes, please submit each as a separate pull request.
+
+4. **Follow Code Standards**: Maintain code cleanliness and adhere to the coding standards used in the project.
+
+5. **Test Your Changes**: Before submitting a pull request, test your changes thoroughly to ensure they work as expected and do not introduce any regressions.
+
+6. **Update Documentation**: If your changes impact any documentation, make sure to update it accordingly.
+
+7. **Resolve Conflicts**: If there are any conflicts with the base branch, resolve them before submitting your pull request.
+
+8. **Request Reviews**: Assign reviewers to your pull request to ensure that your changes are properly reviewed before merging.
+
+9. **Be Responsive**: Respond promptly to any feedback or comments on your pull request.
+
+10. **Ensure CI/CD Passes**: Ensure that all continuous integration (CI) checks pass before merging your pull request.
+
 
 ## Contributors
 
@@ -88,3 +114,7 @@ The basic technologies and tools to be used in this project include:
 | [Abdulkerim Mutlu](https://github.com/AbdulkerimMutlu)    | QA Automation Engineer                |
 | [Sefa Kahraman](https://github.com/SefaKahramann)         | QA Automation Engineer                |
 | [Songül Çam](https://github.com/songulcam)                | QA Automation Engineer                |
+
+## License  
+
+This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

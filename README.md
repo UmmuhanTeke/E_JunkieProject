@@ -20,35 +20,35 @@
 
 ### 1- **Invalid Promotional Code Entry - (US_301)**
 
-In this scenario, the user will add items to the cart and enter an invalid promo code. The screen will display an error message indicating that the code is invalid.
+#### In this scenario, the user will add items to the cart and enter an invalid promo code. The screen will display an error message indicating that the code is invalid.
 
 ### 2- **Incorrect Payment Transaction - (US_302)**
 
-In this scenario, the user will add an item to the cart, enter an invalid email, leave the card details blank, and view the error message.
+#### In this scenario, the user will add an item to the cart, enter an invalid email, leave the card details blank, and view the error message.
 
 ### 3- **Failed Payment Check - (US_303)**
 
-In this scenario, the user reaches the payment page, inputs their email and other information, and incorrectly enters the card number. The message ‘Your card number is invalid’ will be displayed.
+#### In this scenario, the user reaches the payment page, inputs their email and other information, and incorrectly enters the card number. The message ‘Your card number is invalid’ will be displayed.
 
 ### 4- **Successful Payment - (US_304)**
 
-In this scenario, the user successfully completes the payment by entering all their details. A confirmation message will be displayed on the screen.
+#### In this scenario, the user successfully completes the payment by entering all their details. A confirmation message will be displayed on the screen.
 
 ### 5- **Invoice Download Process - (US_305)**
 
-In this scenario, the user is required to download and view their invoice after completing a successful payment transaction.
+#### In this scenario, the user is required to download and view their invoice after completing a successful payment transaction.
 
 ### 6- **Sending a Contact Message - (US_306)**
 
-In this scenario, the user clicks the ‘Contact Us’ button and sends a message by filling out the required information (name, email, subject, message). The screen displays the message ‘Recaptcha did not match.’
+#### In this scenario, the user clicks the ‘Contact Us’ button and sends a message by filling out the required information (name, email, subject, message). The screen displays the message ‘Recaptcha did not match.’
 
 ### 7- **Access to Home Page - (US_307)** 
 
-In this scenario, the user accesses the e-junkie homepage from Shopdemo.e-Junkie.com and verifies that the URL is ‘https://www.e-junkie.com/.’
+#### In this scenario, the user accesses the e-junkie homepage from Shopdemo.e-Junkie.com and verifies that the URL is ‘https://www.e-junkie.com/.’
 
 ### 8- **Information Access Video - (US_308)**
 
-In this scenario, the user clicks on the ‘How It Works’ button on the main page of [E-junkie Shop](https://www.e-junkie.com/). The video opens in a YouTube window and can be watched successfully.
+#### In this scenario, the user clicks on the ‘How It Works’ button on the main page of [E-junkie Shop](https://www.e-junkie.com/). The video opens in a YouTube window and can be watched successfully.
 
 ## Team6 Practice Project
 

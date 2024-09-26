@@ -1,28 +1,17 @@
 # Agile Software Testing Project - E-junkie Shop
-### * This project is for educational purposes and is intended to help participants test their own skills.
+### _This_ _project_ _is_ _for_ _educational_ _purposes_ _and_ _is_ _intended_ _to_ _help_ _participants_ _test_ _their_ _own_ _skills_.
 
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Features Tested](#features-tested)
+- [Technologies and Tools Used](#technologies-and-tools-used)
+- [Prerequisites](#prerequisites)
+- [Contributors](#contributors)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## Project Overview
+## Features Tested
+## Technologies and Tools Used
+## Prerequisites
 ## Contributors
  
 | Contributor                                               | Role                                  |

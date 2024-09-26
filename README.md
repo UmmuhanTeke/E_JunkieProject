@@ -49,9 +49,9 @@ In this scenario, the user accesses the e-junkie homepage from Shopdemo.e-Junkie
 
 In this scenario, the user clicks on the ‘How It Works’ button on the main page of https://www.e-junkie.com/. The video opens in a YouTube window and can be watched successfully.
 
-## Test Environment
+## Team6 Practice Project
 
--The Environment Used in the Project:  [shopdemo.ejunkie.com](https://shopdemo.fatfreeshop.com/).
+-Domain:  [shopdemo.ejunkie.com](https://shopdemo.fatfreeshop.com/).
 
 -Supported browsers: [Chrome](), [Safari](), [Firefox]()
 

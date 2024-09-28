@@ -11,7 +11,7 @@ import java.awt.event.KeyEvent;
 public class US_308 extends BaseDriver {
 
     @Test
-    public void Test1() throws AWTException {
+    public void informationAccessVideo() throws AWTException {
         By link = By.xpath("(//div[@class='banner_btn']/a)[1]");
         By play = By.cssSelector("[class='ytp-large-play-button ytp-button ytp-large-play-button-red-bg']");
         By headerText = By.linkText("Sell downloads and more");
